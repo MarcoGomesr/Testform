@@ -1,0 +1,22 @@
+{
+  "name": "Telrocktest",
+  "version": "0.0.0",
+  "description": "test",
+  "authors": [
+    "Marco"
+  ],
+  "license": "MIT",
+  "homepage": "publi/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/js",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.4",
+    "angular-messages": "~1.4.4"
+  }
+}

@@ -1,0 +1,131 @@
+section(ng-controller='signinCtrl')
+  p.sign
+    |sign in
+  p.information
+   |Please enter your information below  
+
+  
+  
+  form(name="loginForm", novalidate)
+    //- Costumer Account number       
+    div.input-addon
+      span(class="fa fa-user fa-2")
+    input(
+      id='accountNumber',
+      name='accountNumber'
+      type='text',
+      class='form-control',
+      ng-model='data.accountNumber',
+      ng-minlength ='4',
+      placeholder = '{{ data.data.data[0].description }}',
+      required,
+      ng-model-options="{ updateOn: 'blur' }"
+    )
+
+    div(ng-messages='loginForm.accountNumber.$dirty && loginForm.accountNumber.$error')
+      div(ng-show='loginForm.accountNumber.$error.required && loginForm.accountNumber.$touched')
+        p {{ data.data.data[0].description }}
+        p this field is mandatory
+      div(ng-message='minlength')
+        p {{ data.data.data[0].description }}
+        p this field is too short
+
+    //- date of birth        
+    div.input-addon
+      span(class="fa fa-user fa-2")
+    input(
+      id='datebirth',
+      name='datebirth'
+      type='text',
+      class='form-control',
+      ng-model='data.datebirth',
+      ng-minlength ='4',
+      placeholder = 'date of birth',
+      required,
+      ng-model-options="{ updateOn: 'blur' }"
+    )
+
+    div(ng-messages='loginForm.datebirth.$dirty && loginForm.datebirth.$error')
+      div(ng-show='loginForm.datebirth.$error.required && loginForm.datebirth.$touched')
+        p {{ data.data.data[1].description }}
+        p this field is mandatory
+      div(ng-message='minlength')
+        p {{ data.data.data[1].description }}
+        p this field is too short
+
+    //- Postcode    
+    div.input-addon
+      span(class="fa fa-user fa-2")
+    input(
+        id='postcode',
+        name='postcode'
+        type='text',
+        class='form-control',
+        ng-model='data.postcode',
+        ng-minlength ='4',
+        placeholder = '{{data.data.data[2].description }}',
+        required,
+        ng-model-options="{ updateOn: 'blur' }"
+    )
+
+    div(ng-messages='loginForm.postcode.$dirty && loginForm.postcode.$error')
+      div(ng-show='loginForm.postcode.$error.required && loginForm.postcode.$touched')
+        p {{ data.data.data[2].description }}
+        p this field is mandatory
+      div(ng-message='minlength')
+        p {{ data.data.data[2].description }}
+        p this field is too short  
+
+
+    //- Last name    
+    div.input-addon
+      span(class="fa fa-user fa-2")
+    input(
+      id='lastname',
+      name='lastname'
+      type='text',
+      class='form-control',
+      ng-model='data.lastname',
+      ng-minlength ='4',
+      placeholder = '{{data.data.data[3].description }}',
+      required,
+      ng-model-options="{ updateOn: 'blur' }"
+    )
+
+    div(ng-messages='loginForm.lastname.$dirty && loginForm.lastname.$error')
+      div(ng-show='loginForm.lastname.$error.required && loginForm.lastname.$touched')
+        p {{ data.data.data[2].description }}
+        p this field is mandatory
+      div(ng-message='minlength')
+        p {{ data.data.data[2].description }}
+        p this field is too short 
+
+    //- Phone number    
+    div.input-addon
+      span(class="fa fa-user fa-2")
+    input(
+      id='phonenumber',
+      name='phonenumber'
+      type='text',
+      class='form-control',
+      ng-model='data.phonenumber',
+      ng-minlength ='4',
+      placeholder = '{{data.data.data[4].description }}',
+      ng-pattern="/^[0-9]+$/",
+      required
+    )
+    div(ng-messages='loginForm.phonenumber.$dirty && loginForm.phonenumber.$error')
+      div(ng-show='loginForm.phonenumber.$error.required && loginForm.phonenumber.$touched')
+        p {{ data.data.data[2].description }}
+        p this field is mandatory
+      div(ng-message='minlength')
+        p {{ data.data.data[2].description }}
+        p this field is too short
+      div(ng-message='pattern')
+        p {{ data.data.data[2].description }}
+        p Phone must be numeric
+      
+  
+    input(type="submit", value="Sign in", class="btn btn-primary", ng-disabled="!loginForm.$valid")
+
+  p all fields are mandatory
