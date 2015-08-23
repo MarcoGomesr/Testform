@@ -1,16 +1,14 @@
-<<<<<<< HEAD
-## My personal GruntFile for front-end experiments.
+## My personal Form validation
 
 ### Instructions:
 
 #### clone the repo:
 ```
-git clone https://github.com/anthdeldev/GruntFile
+git clone git@github.com:MarcoGomesr/Testform.git
 ```
 
 #### Install dependencies
 ```
-cd GruntFile
 npm install
 ```
 
@@ -24,4 +22,4 @@ grunt
 =======
 # Testform
 Tesing Forms validation with Angular , ng-message
->>>>>>> 24aaa52145544556027649ce177994d3699da3fd
+
