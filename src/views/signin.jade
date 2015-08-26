@@ -1,4 +1,4 @@
-section(ng-controller='signinCtrl')
+section(ng-controller='signinController')
   p.sign
     |sign in
   p.information
@@ -17,7 +17,7 @@ section(ng-controller='signinCtrl')
       class='form-control',
       ng-model='data.accountNumber',
       ng-minlength ='4',
-      placeholder = '{{ data.data.data[0].description }}',
+      placeholder = '{{data.data[0].description }}',
       required,
       ng-model-options="{ updateOn: 'blur' }"
     )
@@ -63,7 +63,7 @@ section(ng-controller='signinCtrl')
         class='form-control',
         ng-model='data.postcode',
         ng-minlength ='4',
-        placeholder = '{{data.data.data[2].description }}',
+        placeholder = '{{data.data[2].description }}',
         required,
         ng-model-options="{ updateOn: 'blur' }"
     )
@@ -87,7 +87,7 @@ section(ng-controller='signinCtrl')
       class='form-control',
       ng-model='data.lastname',
       ng-minlength ='4',
-      placeholder = '{{data.data.data[3].description }}',
+      placeholder = '{{data.data[3].description }}',
       required,
       ng-model-options="{ updateOn: 'blur' }"
     )
@@ -110,7 +110,7 @@ section(ng-controller='signinCtrl')
       class='form-control',
       ng-model='data.phonenumber',
       ng-minlength ='4',
-      placeholder = '{{data.data.data[4].description }}',
+      placeholder = '{{data.data[4].description }}',
       ng-pattern="/^[0-9]+$/",
       required
     )

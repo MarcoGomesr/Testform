@@ -115,7 +115,7 @@ module.exports = function(grunt) {
         // if some scripts depend upon eachother,
         // make sure to list them here in order
         // rather than just using the '*' wildcard.
-        src: [BUILD_DIR_JS + '*'],
+        src: [SRC_FILES_JS],
         dest: BUILD_FILE_JS
       }
     },
@@ -175,7 +175,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         options: { livereload: false },
-        files: [SRC_FILES_JS],
+        files: ['/src/js/*.js'],
         tasks: ['concat']
       },
 

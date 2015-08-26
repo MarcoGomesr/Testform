@@ -1,23 +1,20 @@
-var App = angular.module('TelRock', ['ngMessages', 'ngRoute']);
+var App = angular.module('TelRock', ['ngMessages', 'ui.router']);
 
 //Define an angular module for our app
-App.config(['$routeProvider',
-	function($routeProvider) {
+App.config(['$stateProvider', '$urlRouterProvider',
+	function($stateProvider, $urlRouterProvider) {
 
-	//Define Routing for app
-	//Uri / -> template signing.html
-	//Uri /login -> template slogin.html
-		$routeProvider
-			.when('/', {
-				templateUrl: '/signin.html',      
-				controller: 'signinCtrl'
-			})
+	$urlRouterProvider.otherwise('/signin');
 
-			.when('/login', {
-				templateUrl: 'login.html'        
-			})
+	$stateProvider
+		.state('signin', {
+			url: '/signin',
+			templateUrl: 'signin.html',
+			controller: 'signinController'
+		})
+		.state('login', {
+			url: '/login',
+			template: '<h1>About</h1>'
+		});
 
-			.otherwise({
-				redirectTo: '/'
-			});
 }]);
